@@ -255,7 +255,12 @@ if __name__ == "__main__":
     root_html = "<!DOCTYPE html>\n<html>\n<head><title>Saile Kodi Repository</title></head>\n<body>\n<h1>Saile Kodi Repository</h1>\n<hr/>\n"
     for addon_id, version in new_json_versions.items():
         zip_name = f"{addon_id}-{version}.zip"
-        root_html += f'<a href="zips/{addon_id}/{zip_name}">{zip_name}</a><br>\n'
+        # Para o Kodi File Manager enxergar, vamos copiar o zip do repo para a raiz
+        if addon_id == "repository.saile":
+            shutil.copy(os.path.join("zips", addon_id, zip_name), zip_name)
+            root_html += f'<a href="{zip_name}">{zip_name}</a><br>\n'
+        else:
+            root_html += f'<a href="zips/{addon_id}/{zip_name}">{zip_name}</a><br>\n'
     root_html += "</body>\n</html>\n"
     with open("index.html", "w", encoding="utf-8") as f:
         f.write(root_html)
