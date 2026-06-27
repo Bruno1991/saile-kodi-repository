@@ -16,7 +16,7 @@
 <addon
     id="repository.saile"
     name="SAILE Repository"
-    version="1.0.0"
+    version="1.0.1"
     provider-name="Bruno1991">
 
     <extension point="xbmc.addon.repository">
@@ -24,15 +24,15 @@
         <dir>
 
             <info compressed="false">
-            https://bruno1991.github.io/saile-repo/addons.xml
+            https://bruno1991.github.io/saile-repo/zips/addons.xml
             </info>
 
             <checksum>
-            https://bruno1991.github.io/saile-repo/addons.xml.sha256
+            https://bruno1991.github.io/saile-repo/zips/addons.xml.md5
             </checksum>
 
             <datadir zip="true">
-            https://bruno1991.github.io/saile-repo/
+            https://bruno1991.github.io/saile-repo/zips/
             </datadir>
 
         </dir>
